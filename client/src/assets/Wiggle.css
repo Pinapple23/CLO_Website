@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    gap: 10px;
+  }
+  .box {
+    width: 180px;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg,#1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+  }
+  .all .one {
+    --mask: 
+      radial-gradient(farthest-side,#000 98%,#0000) 0 0/50px 50px;
+  }
+  .all .two {
+    --mask: 
+      radial-gradient(farthest-side,#000 98%,#0000) 0 0/50px 50px round;
+  }
+  .all .three {
+    --mask: 
+      linear-gradient(#000 0 0) 50%/calc(100% - 46.25px) calc(100% - 46.25px) no-repeat,
+      radial-gradient(farthest-side,#000 98%,#0000) 0 0/50px 50px round;
+  }
+  
+  .vertical .one {
+    --mask: 
+      radial-gradient(25px,#000 98%,#0000) 50%/46.25px 50px repeat;
+  }
+  .vertical .two {
+    --mask: 
+      radial-gradient(25px,#000 98%,#0000) 50%/46.25px 50px repeat space;
+  }
+  .vertical .three {
+    --mask: 
+      linear-gradient(0deg,#0000 50px,#000 0) 0 25px,
+      radial-gradient(25px,#000 98%,#0000) 50%/46.25px 50px repeat space;
+  }
+  
+  
+  .left .one {
+    --mask: 
+      radial-gradient(25px,#000 98%,#0000) left/50px 46.25px;
+  }
+  .left .two {
+    --mask: 
+      linear-gradient(to right,#0000 25px,#000 0),
+      radial-gradient(25px,#000 98%,#0000) left/50px 46.25px;
+  }
+  

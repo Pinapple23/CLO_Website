@@ -1,0 +1,66 @@
+/* General form styling */
+.login-form {
+  width: 400px;
+  margin: 50px auto;
+  padding: 2rem;
+  background-image: url('/FormBG.png');
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+
+.login-title {
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  color: #ce0404;
+}
+
+.login-input {
+  width: 75%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  margin-left: 5% ;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Make input background semi-transparent */
+}
+
+.login-input:focus {
+  border-color: #ce0404;;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.login-button {
+  width: 50%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  margin-left: 5%;
+  border: none;
+  border-radius: 5px;
+  background-color: #309490;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #297f7c;
+}
+
+.forgot-password-link {
+  margin-top: 1rem;
+}
+
+.forgot-password-link a {
+  color: #ce0404;
+  text-decoration: none;
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline;
+}

@@ -9,7 +9,7 @@
   background-color: #f5bbc6;
   color: white;
   border-radius: 10px;
-  height: 20px;
+  height: 3rem;
 }
   
   .navbar-content {
@@ -38,5 +38,12 @@
   
   .navbar-item a:hover {
     text-decoration: underline;
+    color: #ce0404;
   }
-  
+  /* Style for active link */
+  .navbar-item a.active {
+    color: #ce0404;
+    font-weight: bold;
+  }
+    
+    
