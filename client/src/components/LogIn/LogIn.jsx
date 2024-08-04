@@ -1,19 +1,25 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAuth } from '../AuthContext';
 import './LogIn.css'; // Import the CSS file
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
+  const { login } = useAuth();
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password }, { withCredentials: true });
       console.log(response.data);
       alert('Login successful');
-      // Save token or set user state here
+      login(); 
+      navigate('/'); // Redirect to home page
+
     } catch (error) {
       console.error('Error logging in:', error);
       alert('Error logging in');

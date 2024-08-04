@@ -3,24 +3,26 @@ import Navbar from './components/Navbar/Navbar'; // Adjust the path as necessary
 import SignUp from './components/SignUp/SignUp';
 import Login from './components/LogIn/LogIn';
 import Home from './components/Home/Home';
+import Profile from './components/Profile/Profile';
 import ForgotPassword from './components/ForgotPassword';
 import '../public/App.css';
+import { AuthProvider } from './components/AuthContext';
 
-
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div>
+    <AuthProvider>
+      <Router>
         <Navbar />
         <Routes>
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home/>} /> {/* Example Home component */}
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
-}
+};
 
 export default App;

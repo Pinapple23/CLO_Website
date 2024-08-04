@@ -1,8 +1,11 @@
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
 import './Navbar.css';
 import logo from '/Logo-NoBG.png';
 
 const Navbar = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
     <nav className="navbar">
       <div className="navbar-content">
@@ -23,9 +26,15 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="navbar-item">
-            <NavLink to="/login" className={({ isActive }) => isActive ? "active" : ""}>
-              Login
-            </NavLink>
+            {isAuthenticated ? (
+              <NavLink to="/profile" className={({ isActive }) => isActive ? "active" : ""}>
+                Profile
+              </NavLink>
+            ) : (
+              <NavLink to="/login" className={({ isActive }) => isActive ? "active" : ""}>
+                Login
+              </NavLink>
+            )}
           </li>
         </ul>
       </div>
@@ -34,4 +43,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
